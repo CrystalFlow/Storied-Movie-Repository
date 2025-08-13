@@ -1,0 +1,9 @@
+/config.properties
+
+target/
+
+*.class
+
+.vscode/
+
+database/movies.db
