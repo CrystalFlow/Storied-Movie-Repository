@@ -54,7 +54,6 @@ public class FilmActual {
     public String getDirector() { return this.Director; }
     public void setDirector(String Director) { this.Director = Director; }
 
-    //maybe turn this one into a list of actors
     public String getActors() { return this.Actors; }
     public void setActors(String Actors) { this.Actors = Actors; }
 

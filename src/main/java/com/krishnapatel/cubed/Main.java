@@ -2,7 +2,6 @@ package com.krishnapatel.cubed;
 
 import java.util.Scanner;
 import com.krishnapatel.cubed.service.*;
-import com.krishnapatel.cubed.api.FilmApiService;
 import com.krishnapatel.cubed.model.*;
 
 public class Main {

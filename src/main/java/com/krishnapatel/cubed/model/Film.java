@@ -27,23 +27,43 @@ public class Film {
     public String getMovie() { return this.movie; }
     public void setMovie(String movie) { this.movie = movie; }
 
-    public ArrayList<String> getMovieReview() { return this.movieReview; }
-    public void setMovieReview(String newMovieReview) { this.movieReview.add(newMovieReview); }
-    public void setMovieReview(String newMovieReview, int i) {if (i >= 0 && i < date.size()) { this.movieReview.set(i, newMovieReview); } }
+    public ArrayList<String> getMovieReview() { 
+        return this.movieReview; 
+    }
+    public void setMovieReview(String newMovieReview) { 
+        this.movieReview.add(newMovieReview); 
+    }
+    public void setMovieReview(String newMovieReview, int i) {
+        if (i >= 0 && i < date.size()) { 
+            this.movieReview.set(i, newMovieReview); 
+        } 
+    }
     public void removeReview(int index, boolean fullRemove) { 
-        if (fullRemove) { movieReview.remove(index - 1); return; }
+        if (fullRemove) { 
+            movieReview.remove(index - 1); return; 
+        }
         movieReview.set(index - 1, "No written review."); 
     }
     public void updateReview(int index, String newReview) { movieReview.set(index - 1, newReview); }
 
-    public ArrayList<String> getDate() { return this.date; }
-    public void setDate(String newDate) { this.date.add(newDate); }
-    public void setDate(String newDate, int i) {  if (i >= 0 && i < date.size()) { this.date.set(i, newDate); } }
+    public ArrayList<String> getDate() { 
+        return this.date; 
+    }
+    public void setDate(String newDate) { 
+        this.date.add(newDate); 
+    }
+    public void setDate(String newDate, int i) { 
+        if (i >= 0 && i < date.size()) { 
+            this.date.set(i, newDate); 
+        } 
+    }
     public void removeDate(int index) {
         removeReview(index, true); 
         date.remove(index - 1); 
     }
-    public void updateDate(int index, String newDate) { date.set(index - 1, newDate); }
+    public void updateDate(int index, String newDate) { 
+        date.set(index - 1, newDate); 
+    }
 
     public int getRating() { return this.rating; }
     public void setRating(int rating) { this.rating = rating; }
