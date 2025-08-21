@@ -1,6 +1,8 @@
 package com.krishnapatel.cubed.model;
 
 public class FilmActual {
+    private int id;
+    private int movie_id;
     private String Title;
     private int Year;
     private String Runtime;
@@ -13,7 +15,9 @@ public class FilmActual {
     private String Type; 
 
 
-    public FilmActual(String Title, int Year, String Runtime, String Genre, String Director, String Actors, String Plot, String Poster, String imdbID, String Type) {
+    public FilmActual(int id, int movie_id, String Title, int Year, String Runtime, String Genre, String Director, String Actors, String Plot, String Poster, String imdbID, String Type) {
+        this.id = id;
+        this.movie_id = movie_id;
         this.Title = Title;
         this.Year = Year;
         this.Runtime = Runtime;
@@ -26,18 +30,11 @@ public class FilmActual {
         this.Type = Type;
     }
 
-    public FilmActual() {
-        this.Title = "";
-        this.Year = -1;
-        this.Runtime = "";
-        this.Genre = "";
-        this.Director = "";
-        this.Actors = "";
-        this.Plot = "";
-        this.Poster = "";
-        this.imdbID = "";
-        this.Type = "";
-    }
+    public int getID() { return id; }
+    public void setID(int id) { this.id = id; }
+
+    public int getMovieID() { return movie_id; }
+    public void setMovieID(int movie_id) { this.movie_id = movie_id; }
 
     public String getTitle() { return this.Title; }
     public void setTitle(String Title) { this.Title = Title; }
