@@ -45,14 +45,13 @@ public class Main {
                 System.out.print("What movie do you want to find? ");
                 String movie = input.nextLine(); // StdIn.readLine();
                 Film movieFound = test.findWatched(movie);
-                if (movieFound == null) { System.out.println("You have no movies in your list. "); continue; }
-                if (movieFound.equals(new Film())) { System.out.println("Movie was not found. "); continue; }
+                if (movieFound == null) { System.out.println("Movie was not found. "); continue; }
                 test.displayMovie(movieFound);
             } else if (userInput == 3) {
                 System.out.print("What movie do you want to update? ");
                 String movie = input.nextLine(); // StdIn.readLine();
                 Film movieFound = test.findWatched(movie);
-                if (!(movieFound.equals(new Film()))) {
+                if (!(movieFound == null)) {
                     System.out.print("Update name (Y/N)? ");
                     String upN = input.nextLine(); // StdIn.readLine();
                     if (upN.equals("Y")) {

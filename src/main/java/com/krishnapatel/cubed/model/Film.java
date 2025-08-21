@@ -11,6 +11,11 @@ public class Film {
     private Boolean like = false; //Did you like the movie?
     private FilmActual actual; //for API info, 
 
+    // private int id;
+    // private String title;
+    // private FilmActual actual;
+    // private List<Review> reviews;
+
     public Film(String movie, String movieReview, String date, int rating, Boolean like) {
         this.movie = movie;
         this.movieReview.add(movieReview); 
@@ -19,10 +24,11 @@ public class Film {
         this.like = like;
         this.actual = new FilmActual(); 
     }
-
-   public Film() {
-        this("null", null, null, 0, false);
-    }
+    // public Film(int id, String title) {
+    //     this.id = id;
+    //     this.title = title;
+    //     this.reviews = new ArrayList<>();
+    // }
 
     public String getMovie() { return this.movie; }
     public void setMovie(String movie) { this.movie = movie; }

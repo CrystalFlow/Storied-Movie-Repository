@@ -38,7 +38,7 @@ public class FilmManager {
     public void addMovie(String movieName, String movieReview, String movieDate, int movieRating, Boolean like) {
         //Checks if movie already exists in the db, and updates accordingly
         Film doesItExist = findWatched(movieName);
-        if (doesItExist != null && !doesItExist.equals(new Film())) {
+        if (doesItExist != null && !(doesItExist == null)) {
             updateReview(doesItExist, movieReview, movieDate, movieRating, like);
             return;
         }
@@ -75,7 +75,7 @@ public class FilmManager {
                 return movie;
             }
         }
-        return new Film();
+        return null;
     }
 
     public void updateReview(String movieName, String newMovieReivew, String newDate, int newMovieRating, Boolean like) {

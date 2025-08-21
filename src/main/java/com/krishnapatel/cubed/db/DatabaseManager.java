@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import com.krishnapatel.cubed.util.ConfigLoader;
+import com.krishnapatel.cubed.model.*;
 
 public class DatabaseManager {
 
@@ -53,10 +54,14 @@ public class DatabaseManager {
                 "type TEXT," + // Movie or TV
                 "FOREIGN KEY(movie_id) REFERENCES movies(id)" + 
                 ");";
-        
-        /*
-         * Maybe create a favorites table
-         */
+        // Insert into movies, insert into filmActual, insert into watchlist
+        // When user watches the movie, remove from watchlist and add to reviewDates 
+        String createWatchlistTable = "CREATE TABLE IF NOT EXISTS watchlist (" + 
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "movie_id INTEGER NOT NULL," +
+                "addedDate TEXT," + // Date added to watchlist, MM-DD-YYYY
+                "FOREIGN KEY(movie_id) REFERENCES movies(id)," +
+                ");";
 
         try (Connection conn = connect();
             Statement stmt = conn.createStatement()) {
@@ -64,9 +69,15 @@ public class DatabaseManager {
             stmt.execute(createMovieTable);
             stmt.execute(createReviewDateTable);
             stmt.execute(createFilmActualTable);
+            stmt.execute(createWatchlistTable);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    // @addMovie() - Add movie to movie table, filmActual table, and reviewDate table
+    public void addMovie(Film film) {
+        //continue later, currently redoing models/
     }
 
     public static void shutdown() {
