@@ -36,7 +36,7 @@ public class FilmApiService {
         JsonArray jsonArray = new JsonArray();
         System.out.println(jsonResponse);
 
-        return new FilmActual();
+        return null;
         // return requestTo(url);
     }
 
