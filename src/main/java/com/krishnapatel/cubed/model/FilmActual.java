@@ -14,7 +14,22 @@ public class FilmActual {
     private String imdbID;
     private String Type; 
 
+    // Constructor for new FilmActual (no id yet, no movie_id yet)
+    // Set id and movie_id during insertion into DB
+    public FilmActual(String Title, int Year, String Runtime, String Genre, String Director, String Actors, String Plot, String Poster, String imdbID, String Type) {
+        this.Title = Title;
+        this.Year = Year;
+        this.Runtime = Runtime;
+        this.Genre = Genre;
+        this.Director = Director;
+        this.Actors = Actors;
+        this.Plot = Plot;
+        this.Poster = Poster;
+        this.imdbID = imdbID;
+        this.Type = Type;
+    }
 
+    // Constructor for FilmActual loaded from DB (with id and movie_id)
     public FilmActual(int id, int movie_id, String Title, int Year, String Runtime, String Genre, String Director, String Actors, String Plot, String Poster, String imdbID, String Type) {
         this.id = id;
         this.movie_id = movie_id;

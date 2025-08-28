@@ -4,13 +4,18 @@ public class WatchlistItem {
  
     private int id;
     private int movie_id;
-    private String title; 
     private String addedDate;
 
-    public WatchlistItem(int id, int movie_id, String title, String addedDate) {
+    // Constructor for new watchlist item (no id yet, no movie_id yet)
+    // Set id and movie_id during insertion into DB
+    public WatchlistItem(String addedDate) {
+        this.addedDate = addedDate;
+    }
+
+    // Constructor for watchlist item loaded from DB (with id and movie_id)
+    public WatchlistItem(int id, int movie_id, String addedDate) {
         this.id = id;
         this.movie_id = movie_id;
-        this.title = title;
         this.addedDate = addedDate;
     }
 
@@ -19,9 +24,6 @@ public class WatchlistItem {
 
     public int getMovieID() { return movie_id; }
     public void setMovieID(int movie_id) { this.movie_id = movie_id; }
-
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
 
     public String getAddedDate() { return addedDate; }
     public void setAddedDate(String addedDate) { this.addedDate = addedDate; }
